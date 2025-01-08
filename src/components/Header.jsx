@@ -40,7 +40,7 @@ const Header = () => {
         <li>
           <Link to={""}>Partner With Us</Link>
         </li>
-        <li className="md:ml-10 mx-auto">
+        <li className="md:ml-8 mx-auto">
           <button
             type="button"
             className={`border-2 py-2 rounded-full md:px-10 ${
