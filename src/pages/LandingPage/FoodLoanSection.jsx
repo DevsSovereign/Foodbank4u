@@ -1,12 +1,12 @@
-import { BsAndroid2 } from "react-icons/bs"
-import { FaApple } from "react-icons/fa"
+import { BsAndroid2 } from "react-icons/bs";
+import { FaApple } from "react-icons/fa";
 
 const FoodLoanSection = () => {
   return (
     <>
-            <section className="bg-black md:mt-20 z-10 relative lg:p-10 md:p-5 py-10 w-full lg:mr-5 flex flex-col lg:gap-10 gap-5 md:flex-row">
-        <section className="text-white block lg:w-1/2 sm:mx-10 mx-3">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold">
+      <section className="bg-black md:mt-20 z-10 relative lg:p-10 md:p-5 py-10 w-full lg:mr-5 flex flex-col lg:gap-10 gap-5 md:flex-row items-center">
+        <section className="text-white block font-mplus md:mx-0 mx-3">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl lg:mr-10 font-semibold">
             <span className="text-secondary">Food Loan</span> Options Tailored
             to You. Repay with ease.
           </h2>
@@ -17,14 +17,14 @@ const FoodLoanSection = () => {
           </p>
           <section className="flex gap-4 my-4">
             <div className="border-r pr-3">
-              <span className="text-secondary sm:text-2xl lg:text-3xl">
+              <span className="text-secondary font-ppins sm:text-2xl lg:text-3xl">
                 5 Million +
               </span>
               <br />
               <p className="sm:text-sm text-xs">Projected User Base by 2026</p>
             </div>
             <div className="pl-2">
-              <span className="text-secondary sm:text-2xl lg:text-3xl">
+              <span className="text-secondary font-ppins sm:text-2xl lg:text-3xl">
                 1 Million +
               </span>
               <br />
@@ -35,7 +35,7 @@ const FoodLoanSection = () => {
           </section>
         </section>
 
-        <section className="flex flex-col relative md:h-[20rem] lg:gap-10 gap-5 md:flex-row items-center md:items-baseline">
+        <section className="font-inter flex flex-col relative md:h-[20rem] lg:gap-10 gap-5 md:flex-row items-center md:items-baseline">
           <div className="p-5 w-fit h-fit text-white text-center rounded-md md:text-left my-auto bg-gradient-to-br from-slate-300 to-black">
             <h3 className="text-lg ">For Android</h3>
             <p className="text-sm">Android 8.0+</p>
@@ -52,15 +52,15 @@ const FoodLoanSection = () => {
                 Download
               </a>
             </button>
-            <div className="flex gap-3 justify-between items-center">
-              <figure className="w-20">
+            <div className="flex justify-between items-center">
+              <figure className="w-14">
                 <img
                   src="/assets/androidCode"
                   className="w-full"
                   alt="qr code to download for android"
                 />
               </figure>
-              <BsAndroid2 className="w-12 h-12" />
+              <BsAndroid2 className="w-7 h-7" />
             </div>
           </div>
           <div className="p-5 w-fit h-fit text-white text-center rounded-md md:text-left bg-gradient-to-br from-slate-300 to-black">
@@ -80,20 +80,20 @@ const FoodLoanSection = () => {
               </a>
             </button>
             <div className="flex gap-3 justify-between items-center">
-              <figure className="w-20">
+              <figure className="w-14">
                 <img
                   src="/assets/iosCode"
                   className="w-full"
                   alt="qr code to download for ios"
                 />
               </figure>
-              <FaApple className="w-12 h-12" />
+              <FaApple className="w-7 h-7" />
             </div>
           </div>
         </section>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default FoodLoanSection
+export default FoodLoanSection;

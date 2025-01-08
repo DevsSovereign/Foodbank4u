@@ -31,19 +31,19 @@ const Header = () => {
             <RiCloseLargeFill className="w-7 h-7 sm:hidden" />
           </button>
         )}
-        <li>
+        <li className="font-mplus">
           <Link to={""}>Our Process</Link>
         </li>
-        <li>
+        <li className="font-mplus">
           <Link to={""}>FAQs</Link>
         </li>
-        <li>
+        <li className="font-mplus">
           <Link to={""}>Partner With Us</Link>
         </li>
         <li className="md:ml-8 mx-auto">
           <button
             type="button"
-            className={`border-2 py-2 rounded-full md:px-10 ${
+            className={`border-2 font-mplus py-2 rounded-full md:px-10 ${
               showMenu ? "px-10" : "border-secondary text-secondary px-4"
             }`}
           >

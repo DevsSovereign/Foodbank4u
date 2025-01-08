@@ -2,6 +2,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import FoodLoanSection from "./FoodLoanSection";
 import HeroSection from "./HeroSection";
+import ExclusiveSection from "./ExclusiveSection";
 
 const LandingPage = () => {
   return (
@@ -15,6 +16,7 @@ const LandingPage = () => {
       </section>
       <HeroSection />
       <FoodLoanSection />
+      <ExclusiveSection />
 
       <Footer />
     </section>

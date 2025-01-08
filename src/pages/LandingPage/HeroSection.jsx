@@ -1,10 +1,10 @@
-import { FaApple, FaGooglePlay } from "react-icons/fa"
+import { FaApple, FaGooglePlay } from "react-icons/fa";
 
 const HeroSection = () => {
   return (
     <>
-            <section className="bg-white pl-3 pt-3 pb-3 md:pb-0 mb-5 md:mb-0 flex relative">
-        <section className="flex flex-col gap-3 w-[500px] md:w-[380px] lg:w-[580px] mx-auto items-center md:items-start mt-6 md:ml-3 relative z-10">
+      <section className="bg-white pl-3 pt-3 pb-3 md:pb-0 mb-5 md:mb-0 flex relative">
+        <section className="font-mplus flex flex-col gap-3 w-[500px] md:w-[380px] lg:w-[580px] mx-auto items-center md:items-start mt-6 md:ml-3 relative z-10">
           <h1 className="font-bold text-3xl sm:text-4xl md:text-5xl md:leading-[70px] leading-[40px] sm:leading-[50px] text-center md:text-left">
             Eat Well Today, Pay Later: Flexible Food Loans for All
           </h1>
@@ -22,7 +22,7 @@ const HeroSection = () => {
               alt="hand holding mobile phone with foodbank app on screen"
             />
           </figure>
-          <section className="w-full md:mt-5 lg:mt-20">
+          <section className="w-full">
             <p className="font-medium text-lg md:text-xl text-left md:mb-5">
               Download App From
             </p>
@@ -85,7 +85,7 @@ const HeroSection = () => {
         </section>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default HeroSection
+export default HeroSection;
