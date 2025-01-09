@@ -28,11 +28,11 @@ const TransformSection = () => {
     },
   ];
   return (
-    <section className="py-20">
-      <h3 className="text-center font-bold sm:text-3xl text-xl">
+    <section className="py-20 relative bg-white z-20">
+      <h3 className="text-center text-secondary font-ppins">
         DEDICATED FEATURES
       </h3>
-      <p className="text-center text-sm opacity-70 my-2">
+      <p className="text-center font-bold sm:text-3xl text-xl lg:w-1/2 sm:w-2/3 mx-auto my-2 px-5 font-mplus">
         Transformative Solutions for Healthy Eating and Financial Stability
       </p>
 
