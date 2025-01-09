@@ -3,6 +3,7 @@ import Footer from "../../components/Footer";
 import FoodLoanSection from "./FoodLoanSection";
 import HeroSection from "./HeroSection";
 import ExclusiveSection from "./ExclusiveSection";
+import GetStartedSection from "./GetStartedSection";
 
 const LandingPage = () => {
   return (
@@ -17,7 +18,7 @@ const LandingPage = () => {
       <HeroSection />
       <FoodLoanSection />
       <ExclusiveSection />
-
+      <GetStartedSection />
       <Footer />
     </section>
   );
