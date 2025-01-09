@@ -1,20 +1,29 @@
 import { useState } from "react";
 import { RiCloseLargeFill } from "react-icons/ri";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const Header = () => {
+// eslint-disable-next-line react/prop-types
+const Header = ({ customStyle, textColor }) => {
   const [showMenu, setShowMenu] = useState(false);
+  const navigate = useNavigate();
 
   return (
-    <nav className="flex items-center justify-between py-4 md:px-14 px-5 relative z-30">
-      <span className="flex items-center gap-2">
+    <nav
+      className={`${customStyle} flex items-center justify-between py-4 md:px-10 px-4 z-30 ${!customStyle && "relative"}`}
+    >
+      <span
+        className="flex items-center gap-2 cursor-pointer"
+        onClick={() => navigate("/")}
+      >
         <img
           src="/assets/foodbank-logo.png"
           className="sm:w-auto w-10"
           alt="foodbank logo"
         />
-        <p className="font-bold text-secondary text-xl">FOODBANK</p>
+        <p className={`${textColor} font-bold text-secondary text-xl`}>
+          FOODBANK
+        </p>
       </span>
       <button type="button" onClick={() => setShowMenu(true)}>
         <RxHamburgerMenu className="w-7 h-7 sm:hidden" />
@@ -32,7 +41,7 @@ const Header = () => {
           </button>
         )}
         <li className="font-mplus">
-          <Link to={""}>Our Process</Link>
+          <Link to={"/become-a-rider"}>Our Process</Link>
         </li>
         <li className="font-mplus">
           <Link to={""}>FAQs</Link>
@@ -43,7 +52,7 @@ const Header = () => {
         <li className="md:ml-8 mx-auto">
           <button
             type="button"
-            className={`border-2 font-mplus py-2 rounded-full md:px-10 ${
+            className={`${textColor} border-2 font-mplus py-2 rounded-full md:px-10 ${
               showMenu ? "px-10" : "border-secondary text-secondary px-4"
             }`}
           >

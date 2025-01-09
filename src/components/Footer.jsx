@@ -5,7 +5,7 @@ import { IoIosMail } from "react-icons/io"
 const Footer = () => {
   return (
     <footer>
-    <section className="text-white bg-black p-5 py-10 flex flex-col gap-10 md:flex-row md:justify-between">
+    <section className="text-white bg-black p-5 py-10 flex flex-col gap-10 md:flex-row md:justify-between font-ppins">
       <article className="md:w-1/3">
         <span className="flex items-center gap-2 mb-2">
           <img src="/assets/foodbank-logo.png" alt="foodbank logo" />
