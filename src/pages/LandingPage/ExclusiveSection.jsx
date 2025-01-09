@@ -29,23 +29,23 @@ const ExclusiveSection = () => {
   ];
   return (
     <section className="py-10">
-      <section className="p-10 flex justify-between items-center">
+      <section className="sm:p-10 p-5 flex flex-col md:gap-0 gap-5 md:flex-row justify-between md:items-center">
         <h3 className="font-ppins text-4xl font-medium">
           <span className="font-mplus text-sm font-normal">
             Benefits of Choosing Foodbank
           </span>
           <br />
           <span className="text-secondary">Exclusive Benefit</span>
-          <br /> of Foodbank
+          <br className="sm:block hidden" /> of Foodbank
         </h3>
 
-        <article className="border-l-2 border-secondary w-1/2 px-3 leading-7">
+        <article className="border-l-2 border-secondary md:w-1/2 px-3 leading-7">
           Choosing Foodbank unlocks comprehensive food support. Enjoy flexible
           loans, expert nutrition guidance, convenient shopping and community
           resources, ensuring stress-free meals and enhanced well-being.
         </article>
       </section>
-      <section className="flex flex-col md:flex-row gap-3 items-center py-5 px-3">
+      <section className="flex flex-col lg:flex-nowrap md:flex-wrap md:flex-row gap-3 items-center py-5 px-3 justify-between lg:w-auto md:w-[45rem] mx-auto">
         {data.map((item, index) => (
           <ListCard
             key={index}
