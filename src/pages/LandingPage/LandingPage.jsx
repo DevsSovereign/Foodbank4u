@@ -5,6 +5,11 @@ import HeroSection from "./HeroSection";
 import ExclusiveSection from "./ExclusiveSection";
 import GetStartedSection from "./GetStartedSection";
 import TransformSection from "./TransformSection";
+import FaqSection from "./FaqSection";
+import faqData from "./faqData.json";
+import ReviewSection from "./ReviewSection";
+import InquirySection from "./InquirySection";
+import benefitsData from "./benefits.json";
 
 const LandingPage = () => {
   return (
@@ -18,9 +23,20 @@ const LandingPage = () => {
       </section>
       <HeroSection />
       <FoodLoanSection />
-      <ExclusiveSection />
+      <ExclusiveSection
+        data={benefitsData}
+        mainText={"Benefits of Choosing Foodbank"}
+        subText1={"Exclusive Benefit"}
+        subText2={"of Foodbank"}
+        details={
+          "Choosing Foodbank unlocks comprehensive food support. Enjoy flexible loans, expert nutrition guidance, convenient shopping and community resources, ensuring stress-free meals and enhanced well-being."
+        }
+      />
       <GetStartedSection />
       <TransformSection />
+      <FaqSection data={faqData} />
+      <ReviewSection />
+      <InquirySection />
       <Footer />
     </section>
   );
