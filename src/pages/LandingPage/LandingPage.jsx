@@ -4,6 +4,7 @@ import FoodLoanSection from "./FoodLoanSection";
 import HeroSection from "./HeroSection";
 import ExclusiveSection from "./ExclusiveSection";
 import GetStartedSection from "./GetStartedSection";
+import TransformSection from "./TransformSection";
 
 const LandingPage = () => {
   return (
@@ -19,6 +20,7 @@ const LandingPage = () => {
       <FoodLoanSection />
       <ExclusiveSection />
       <GetStartedSection />
+      <TransformSection />
       <Footer />
     </section>
   );
