@@ -1,0 +1,22 @@
+[
+  {
+    "img": "/assets/icons/food.png",
+    "title": "Food Security",
+    "details": "Foodbank ensures uninterrupted nutrition, shielding you from financial uncertainty. Our flexible loans provide stable access to wholesome meals, unaffected by life's financial ups and downs. "
+  },
+  {
+    "img": "/assets/icons/money.png",
+    "title": "Financial Flexibility",
+    "details": "Foodbank offers convenient grocery loans to bridge financial gaps. Repay in flexible, manageable installments tailored to your budget. Our loans eliminate emergency food expenses' financial strain, ensuring consistent acces to nutritious meals."
+  },
+  {
+    "img": "/assets/icons/smile.png",
+    "title": "Convenience",
+    "details": "Foodbank streamlines your experience with a seamless online platform. Quickly apply for grocery loans, manage repayments and shop from partner stores – all in one convenient place"
+  },
+  {
+    "img": "/assets/icons/community.png",
+    "title": "Community Support",
+    "details": "Join Foodbank's supportive community, connecting individuals committed to food security. Share experiences, insights and resources with like-minded members. Together, break financial and nutritional barriers."
+  }
+]
