@@ -18,8 +18,8 @@ const GetStartedSection = () => {
         <article>
           <ul className="flex flex-col md:justify-between md:gap-20 gap-7">
             <li className="flex gap-3 items-center md:w-[15rem] my-2">
-              <div className="text-xs hidden bg-secondary opacity-30 w-8 h-8 rounded-[50%] md:flex items-center justify-center">
-                <p className="text-xs">1</p>
+              <div className="text-sm hidden bg-[#008B5080] w-14 h-6 rounded-[50%] md:block text-center">
+                1
               </div>
               <div>
                 <h5 className="font-bold mb-2 text-sm">Sign-up</h5>
@@ -30,8 +30,8 @@ const GetStartedSection = () => {
               </div>
             </li>
             <li className="flex gap-3 items-center md:w-[15rem] my-2">
-              <div className="text-xs hidden bg-secondary opacity-30 w-8 h-8 rounded-[50%] md:flex items-center justify-center">
-                <p className="text-xs">2</p>
+              <div className="text-sm hidden bg-[#008B5080] w-14 h-6 rounded-[50%] md:block text-center">
+                2
               </div>
               <div>
                 <h5 className="font-bold mb-2 text-sm">Complete KYC</h5>
@@ -42,8 +42,8 @@ const GetStartedSection = () => {
               </div>
             </li>
             <li className="flex gap-3 items-center md:w-[15rem] my-2">
-              <div className="text-xs hidden bg-secondary opacity-30 w-8 h-8 rounded-[50%] md:flex items-center justify-center">
-                <p className="text-xs">3</p>
+              <div className="text-sm hidden bg-[#008B5080] w-14 h-6 rounded-[50%] md:block text-center">
+                3
               </div>
               <div>
                 <h5 className="font-bold mb-2 text-sm">
@@ -63,8 +63,8 @@ const GetStartedSection = () => {
         <article>
           <ul className="flex flex-col md:justify-between md:gap-20 gap-7">
             <li className="flex gap-3 items-center md:w-[15rem] my-2">
-              <div className="text-xs hidden bg-secondary opacity-30 w-8 h-8 rounded-[50%] md:flex items-center justify-center">
-                <p className="text-xs">1</p>
+              <div className="text-sm hidden bg-[#008B5080] w-14 h-6 rounded-[50%] md:block text-center">
+                1
               </div>
               <div>
                 <h5 className="font-bold mb-2 text-sm">Grocery Shopping</h5>
@@ -75,8 +75,8 @@ const GetStartedSection = () => {
               </div>
             </li>
             <li className="flex gap-3 items-center md:w-[15rem] my-2">
-              <div className="text-xs hidden bg-secondary opacity-30 w-8 h-8 rounded-[50%] md:flex items-center justify-center">
-                <p className="text-xs">2</p>
+              <div className="text-sm hidden bg-[#008B5080] w-14 h-6 rounded-[50%] md:block text-center">
+                2
               </div>
               <div>
                 <h5 className="font-bold mb-2 text-sm"> Flexible Repayment</h5>
@@ -87,8 +87,8 @@ const GetStartedSection = () => {
               </div>
             </li>
             <li className="flex gap-3 items-center md:w-[15rem] my-2">
-              <div className="text-xs hidden bg-secondary opacity-30 w-8 h-8 rounded-[50%] md:flex items-center justify-center">
-                <p className="text-xs">3</p>
+              <div className="text-sm hidden bg-[#008B5080] w-14 h-6 rounded-[50%] md:block text-center">
+                3
               </div>
               <div>
                 <h5 className="font-bold mb-2 text-sm">Ongoing Support</h5>
