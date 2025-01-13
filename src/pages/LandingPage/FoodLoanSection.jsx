@@ -1,10 +1,24 @@
 import { BsAndroid2 } from "react-icons/bs";
 import { FaApple } from "react-icons/fa";
+import Marquee from "react-fast-marquee";
 
 const FoodLoanSection = () => {
   return (
     <>
-      <section className="bg-black md:mt-20 z-10 relative lg:p-10 md:p-5 py-10 w-full lg:mr-5 flex flex-col lg:gap-10 gap-5 md:flex-row items-center">
+      <section className="mt-24 relative">
+        <div className="bg-secondary h-10 absolute w-full z-40 -top-10 transform rotate-1"></div>
+        <div className="bg-secondary h-10 absolute w-full -top-10 z-40 transform -rotate-1 flex items-center">
+          <Marquee>
+            <p className="font-ppins tracking-widest text-2xl text-white text-nowrap mr-6">
+              LICENSED BY FCCPC, NDPC, LENDER LICENSE AND CAC.
+            </p>
+            <p className="font-ppins tracking-widest text-2xl text-white text-nowrap mr-6">
+              LICENSED BY FCCPC, NDPC, LENDER LICENSE AND CAC.
+            </p>
+          </Marquee>
+        </div>
+      </section>
+      <section className="bg-black z-10 relative lg:p-10 md:p-5 py-10 w-full lg:mr-5 flex flex-col lg:gap-10 gap-5 md:flex-row items-center">
         <section className="text-white block font-mplus md:mx-0 mx-3">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl lg:mr-10 font-semibold">
             <span className="text-secondary">Food Loan</span> Options Tailored
