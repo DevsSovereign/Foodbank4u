@@ -47,7 +47,7 @@ const Header = ({ customStyle, textColor }) => {
           <Link to={""}>FAQs</Link>
         </li>
         <li className="font-mplus">
-          <Link to={""}>Partner With Us</Link>
+          <Link to={"/get-in-touch"}>Partner With Us</Link>
         </li>
         <li className="md:ml-8 mx-auto">
           <button
