@@ -42,7 +42,7 @@ const Index = () => {
             type="button"
             className="bg-secondary w-fit mx-auto font-semibold p-2 text-white"
           >
-            Rider Partnership Form
+            Partnership Form
           </button>
         )}
 
