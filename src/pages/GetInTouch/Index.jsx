@@ -19,10 +19,10 @@ const Index = () => {
     <section className="max-w-[1450px] mx-auto relative overflow-hidden">
       <Header
         customStyle={"absolute w-full text-white"}
-        textColor={"text-white"}
+        textColor={"text-secondary"}
       />
-      <section className="bg-[url('/assets/wave.png')] relative flex items-center justify-center h-screen bg-fixed bg-cover bg-top">
-        <section className="bg-black w-full h-full">
+      <section id="hero" className="bg-black relative flex items-center justify-center h-screen">
+        <section className="bg-[url('/assets/wave.png')] bg-fixed bg-cover w-full h-full">
           <section className="text-white flex h-full flex-col justify-center items-center text-center">
             <h1 className="lg:text-7xl md:text-5xl text-4xl mb-5 font-bold">
               Get In Touch
