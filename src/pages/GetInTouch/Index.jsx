@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
+import { useLocation } from "react-router-dom";
+import BackToTop from "../../components/BackToTop";
 
 const Index = () => {
   const [pageNo, setPageNo] = useState(1);
@@ -15,14 +17,28 @@ const Index = () => {
     terms: false,
     agree: false,
   });
+
+  const location = useLocation();
+
+  useEffect(() => {
+    const hash = location.hash.replace("#", "");
+    if (hash) {
+      const section = document.getElementById(hash);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
   return (
     <section className="max-w-[1450px] mx-auto relative overflow-hidden">
       <Header
-        customStyle={"absolute w-full text-white"}
+        customStyle={"absolute text-white"}
         textColor={"text-white"}
+        isOtherPage={true}
       />
-      <section className="bg-[url('/assets/wave.png')] relative flex items-center justify-center h-screen bg-fixed bg-cover bg-top">
-        <section className="bg-black w-full h-full">
+      <section id="hero" className="bg-black relative flex items-center justify-center h-screen">
+        <section className="bg-[url('/assets/wave.png')] bg-fixed bg-cover w-full h-full">
           <section className="text-white flex h-full flex-col justify-center items-center text-center">
             <h1 className="lg:text-7xl md:text-5xl text-4xl mb-5 font-bold">
               Get In Touch
@@ -36,13 +52,13 @@ const Index = () => {
         </section>
       </section>
 
-      <section className="flex flex-col my-10">
+      <section id="partnershipForm" className="flex flex-col my-10">
         {pageNo !== 0 && (
           <button
             type="button"
             className="bg-secondary w-fit mx-auto font-semibold p-2 text-white"
           >
-            Rider Partnership Form
+            Partnership Form
           </button>
         )}
 
@@ -252,6 +268,8 @@ const Index = () => {
           </section>
         )}
       </section>
+
+      <BackToTop />
 
       <Footer />
     </section>

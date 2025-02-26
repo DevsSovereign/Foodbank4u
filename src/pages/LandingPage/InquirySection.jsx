@@ -3,10 +3,9 @@ import { FaApple, FaGooglePlay } from "react-icons/fa";
 const InquirySection = () => {
   return (
     <section className="md:px-20 px-3 py-10 font-ppins">
-      <h3 className="md:text-5xl text-3xl text-center font-bold mb-5">Have An Inquiry?</h3>
+      <h3 className="md:text-5xl text-3xl text-center font-bold mb-5">Subscribe to Our Newsletter?</h3>
       <p className="text-center opacity-70 md:w-1/2 mx-auto">
-        Send Us a messaage if You You have questions needed to be answered and
-        not listed in FAQ
+      Stay updated with our latest news, exclusive offers, and insightful tips. Subscribe now and never miss an update!
       </p>
 
       <section className="md:w-1/2 mx-auto my-20">
@@ -14,14 +13,15 @@ const InquirySection = () => {
           type="email"
           name="inquiry"
           id="inquiry"
-          className="border p-3 w-full my-4"
+          className="border p-3 w-full my-4 text-sm"
+          placeholder="Enter email address"
         />
         <div className="w-fit mx-auto mb-3">
           <button
             type="button"
             className="bg-secondary text-white p-3 rounded-md "
           >
-            Submit Inquiry
+            Subcribe
           </button>
         </div>
         <p className="text-center opacity-70">
