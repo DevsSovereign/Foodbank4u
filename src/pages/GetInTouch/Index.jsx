@@ -18,8 +18,9 @@ const Index = () => {
   return (
     <section className="max-w-[1450px] mx-auto relative overflow-hidden">
       <Header
-        customStyle={"absolute w-full text-white"}
-        textColor={"text-secondary"}
+        customStyle={"absolute text-white"}
+        textColor={"text-white"}
+        isOtherPage={true}
       />
       <section id="hero" className="bg-black relative flex items-center justify-center h-screen">
         <section className="bg-[url('/assets/wave.png')] bg-fixed bg-cover w-full h-full">

@@ -11,8 +11,9 @@ const RidersPage = () => {
   return (
     <section className="max-w-[1450px] mx-auto overflow-hidden">
       <Header
-        customStyle={"absolute w-full text-white"}
+        customStyle={"absolute text-white"}
         textColor={"text-white"}
+        isOtherPage={true}
       />
       <HeroSection />
       <ExclusiveSection
