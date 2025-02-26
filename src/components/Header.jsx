@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import { RiCloseLargeFill } from "react-icons/ri";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Link, useNavigate } from "react-router-dom";
+import GetStartedModal from "./Modal/GetStartedModal";
 
 // eslint-disable-next-line react/prop-types
 const Header = ({ customStyle, textColor, isOtherPage }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 
   const scrollToSection = (id) => {
@@ -36,8 +38,9 @@ const Header = ({ customStyle, textColor, isOtherPage }) => {
     <nav
       className={`flex items-center justify-between py-4 md:px-10 px-4 z-30 w-full 
     ${
-      isFixed ?
-      "fixed bg-white shadow-lg transition-all duration-1000 ease-in-out z-50" : customStyle
+      isFixed
+        ? "fixed bg-white shadow-lg transition-all duration-1000 ease-in-out z-50"
+        : customStyle
     }`}
     >
       <span
@@ -49,7 +52,11 @@ const Header = ({ customStyle, textColor, isOtherPage }) => {
           className="sm:w-auto w-10"
           alt="foodbank logo"
         />
-        <p className={`${isFixed && isOtherPage ? "text-secondary" : textColor} font-bold text-secondary text-xl`}>
+        <p
+          className={`${
+            isFixed && isOtherPage ? "text-secondary" : textColor
+          } font-bold text-secondary text-xl`}
+        >
           FOODBANK
         </p>
       </span>
@@ -83,14 +90,18 @@ const Header = ({ customStyle, textColor, isOtherPage }) => {
         <li className="md:ml-8 mx-auto">
           <button
             type="button"
-            className={`${isFixed && isOtherPage ? "text-secondary" : textColor} border-2 font-mplus py-2 rounded-full md:px-10 ${
+            className={`${
+              isFixed && isOtherPage ? "text-secondary" : textColor
+            } border-2 font-mplus py-2 rounded-full md:px-10 ${
               showMenu ? "px-10" : "border-secondary text-secondary px-4"
             }`}
+            onClick={() => setShowModal((prev) => !prev)}
           >
             Get Started
           </button>
         </li>
       </ul>
+      {showModal && <GetStartedModal closeModal={() => setShowModal(false)} />}
     </nav>
   );
 };
