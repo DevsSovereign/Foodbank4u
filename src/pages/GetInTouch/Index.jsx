@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
+import { useLocation } from "react-router-dom";
 
 const Index = () => {
   const [pageNo, setPageNo] = useState(1);
@@ -15,6 +16,19 @@ const Index = () => {
     terms: false,
     agree: false,
   });
+
+  const location = useLocation();
+
+  useEffect(() => {
+    const hash = location.hash.replace("#", "");
+    if (hash) {
+      const section = document.getElementById(hash);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
   return (
     <section className="max-w-[1450px] mx-auto relative overflow-hidden">
       <Header
@@ -37,7 +51,7 @@ const Index = () => {
         </section>
       </section>
 
-      <section className="flex flex-col my-10">
+      <section id="partnershipForm" className="flex flex-col my-10">
         {pageNo !== 0 && (
           <button
             type="button"

@@ -8,6 +8,16 @@ import faqData from "./faqData.json";
 import benefitsData from "./benefits.json";
 
 const RidersPage = () => {
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.location.href = `/get-in-touch/#${id}`;
+    }
+  };
+
   return (
     <section className="max-w-[1450px] mx-auto overflow-hidden">
       <Header
@@ -34,6 +44,7 @@ const RidersPage = () => {
         <button
           type="button"
           className="w-40 bg-secondary text-white p-3 rounded-md"
+          onClick={() => scrollToSection("partnershipForm")}
         >
           Apply Now
         </button>
