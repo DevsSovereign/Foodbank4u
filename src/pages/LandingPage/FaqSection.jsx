@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaAngleDown, FaAngleRight } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
 
 const FaqSection = ({data}) => {
   const [showAnswer, setShowAnswer] = useState(
@@ -15,8 +16,20 @@ const FaqSection = ({data}) => {
     );
   };
 
+  const location = useLocation();
+
+  useEffect(() => {
+    const hash = location.hash.replace("#", "");
+    if (hash) {
+      const section = document.getElementById(hash);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
   return (
-    <section className="bg-black relative py-20">
+    <section id="faq" className="bg-black relative py-20">
       <section className="absolute md:top-[-10rem] z-10 md:left-[-15rem] left-[-20rem] top-[-15rem]">
         <div className="w-[50rem] h-[50rem] rounded-[50%] absolute bg-[#2BB32A14]"></div>
         <div className="w-[45rem] h-[45rem] rounded-[50%] absolute bg-[#2BB32A14]"></div>

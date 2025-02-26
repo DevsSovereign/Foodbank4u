@@ -8,6 +8,16 @@ const Header = ({ customStyle, textColor }) => {
   const [showMenu, setShowMenu] = useState(false);
   const navigate = useNavigate();
 
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+  
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.location.href = `/#${id}`;
+    }
+  };
+
   return (
     <nav
       className={`${customStyle} flex items-center justify-between py-4 md:px-10 px-4 z-30 ${!customStyle && "relative"}`}
@@ -43,8 +53,8 @@ const Header = ({ customStyle, textColor }) => {
         <li className="font-mplus">
           <Link to={"/become-a-rider"}>Our Process</Link>
         </li>
-        <li className="font-mplus">
-          <Link to={""}>FAQs</Link>
+        <li className="font-mplus cursor-pointer" onClick={() => scrollToSection("faq")}>
+          FAQs
         </li>
         <li className="font-mplus">
           <Link to={"/get-in-touch"}>Partner With Us</Link>
