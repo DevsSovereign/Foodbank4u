@@ -6,13 +6,25 @@ import HeroSection from "./HeroSection";
 import PartnershipSection from "./PartnershipSection";
 import faqData from "./faqData.json";
 import benefitsData from "./benefits.json";
+import BackToTop from "../../components/BackToTop";
 
 const RidersPage = () => {
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.location.href = `/get-in-touch/#${id}`;
+    }
+  };
+
   return (
     <section className="max-w-[1450px] mx-auto overflow-hidden">
       <Header
-        customStyle={"absolute w-full text-white"}
+        customStyle={"absolute text-white"}
         textColor={"text-white"}
+        isOtherPage={true}
       />
       <HeroSection />
       <ExclusiveSection
@@ -33,10 +45,12 @@ const RidersPage = () => {
         <button
           type="button"
           className="w-40 bg-secondary text-white p-3 rounded-md"
+          onClick={() => scrollToSection("partnershipForm")}
         >
           Apply Now
         </button>
       </section>
+      <BackToTop />
       <Footer />
     </section>
   );

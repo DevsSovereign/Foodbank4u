@@ -10,6 +10,7 @@ import faqData from "./faqData.json";
 import ReviewSection from "./ReviewSection";
 import InquirySection from "./InquirySection";
 import benefitsData from "./benefits.json";
+import BackToTop from "../../components/BackToTop";
 
 const LandingPage = () => {
   return (
@@ -37,6 +38,7 @@ const LandingPage = () => {
       <FaqSection data={faqData} />
       <ReviewSection />
       <InquirySection />
+      <BackToTop />
       <Footer />
     </section>
   );
