@@ -6,6 +6,7 @@ import HeroSection from "./HeroSection";
 import PartnershipSection from "./PartnershipSection";
 import faqData from "./faqData.json";
 import benefitsData from "./benefits.json";
+import BackToTop from "../../components/BackToTop";
 
 const RidersPage = () => {
   const scrollToSection = (id) => {
@@ -49,6 +50,7 @@ const RidersPage = () => {
           Apply Now
         </button>
       </section>
+      <BackToTop />
       <Footer />
     </section>
   );

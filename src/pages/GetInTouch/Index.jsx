@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import { useLocation } from "react-router-dom";
+import BackToTop from "../../components/BackToTop";
 
 const Index = () => {
   const [pageNo, setPageNo] = useState(1);
@@ -267,6 +268,8 @@ const Index = () => {
           </section>
         )}
       </section>
+
+      <BackToTop />
 
       <Footer />
     </section>
