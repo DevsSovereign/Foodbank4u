@@ -29,14 +29,6 @@ const ReviewSection = () => {
     ],
   };
 
-  const galleryImages = [
-    "/assets/schoolBoys.jpeg",
-    "/assets/children.jpeg",
-    "/assets/schoolBoys.jpeg",
-    "/assets/children.jpeg",
-    "/assets/schoolBoys.jpeg",
-    "/assets/children.jpeg",
-  ];
   return (
     <section className="py-20">
       <h3 className="text-center text-secondary font-ppins">TESTIMONIALS</h3>
@@ -51,14 +43,6 @@ const ReviewSection = () => {
           </section>
         ))}
           </Slider>
-      </section>
-
-      <section className="grid md:grid-rows-2 md:grid-cols-3 grid-rows-3 grid-cols-2 gap-10">
-        {galleryImages.map((img, index) => (
-          <figure key={index} className="sm:w-[25rem] w-[20rem]">
-            <img src={img} alt="" />
-          </figure>
-        ))}
       </section>
     </section>
   );

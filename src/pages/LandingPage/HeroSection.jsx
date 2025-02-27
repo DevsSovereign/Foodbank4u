@@ -56,22 +56,6 @@ const HeroSection = () => {
                 </a>
               </div>
             </section>
-            <section className="gap-10 pt-10 hidden md:flex">
-              <div className="flex relative w-20">
-                <figure className="absolute -top-3">
-                  <img src="/assets/image1.png" alt="" />
-                </figure>
-                <figure className="absolute -top-3 w-12 right-0">
-                  <img src="/assets/image2.png" alt="" />
-                </figure>
-                <figure className="absolute -top-3 -right-8">
-                  <img src="/assets/image3.png" alt="" />
-                </figure>
-              </div>
-              <div>
-                <p>Join Active users</p>
-              </div>
-            </section>
           </section>
         </section>
 
