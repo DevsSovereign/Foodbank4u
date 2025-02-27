@@ -1,32 +1,69 @@
+import axios from "axios";
+import { useState } from "react";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
+import InfoModal from "../../components/Modal/InfoModal";
 
 const InquirySection = () => {
+  const [email, setEmail] = useState("");
+  const [showModal, setShowModal] = useState({
+    show: false,
+    info: "",
+  });
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    const payload = {
+      email: email,
+    };
+    try {
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_URL}/subscribers`,
+        payload
+      );
+      const resMsg = res.data.message || "Subscription successful";
+      setShowModal({ info: resMsg, show: true });
+      setEmail("");
+    } catch (error) {
+      console.error(error);
+      setEmail("");
+      setShowModal({ info: "Something went wrong", show: true });
+    }
+  };
+
   return (
     <section className="md:px-20 px-3 py-10 font-ppins">
-      <h3 className="md:text-5xl text-3xl text-center font-bold mb-5">Subscribe to Our Newsletter?</h3>
+      <h3 className="md:text-5xl text-3xl text-center font-bold mb-5">
+        Subscribe to Our Newsletter?
+      </h3>
       <p className="text-center opacity-70 md:w-1/2 mx-auto">
-      Stay updated with our latest news, exclusive offers, and insightful tips. Subscribe now and never miss an update!
+        Stay updated with our latest news, exclusive offers, and insightful
+        tips. Subscribe now and never miss an update!
       </p>
 
       <section className="md:w-1/2 mx-auto my-20">
-        <input
-          type="email"
-          name="inquiry"
-          id="inquiry"
-          className="border p-3 w-full my-4 text-sm"
-          placeholder="Enter email address"
-        />
-        <div className="w-fit mx-auto mb-3">
-          <button
-            type="button"
-            className="bg-secondary text-white p-3 rounded-md "
-          >
-            Subcribe
-          </button>
-        </div>
+        <form onSubmit={handleSubscribe}>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="border p-3 w-full my-4 text-xs"
+            placeholder="Enter email address"
+            required
+          />
+          <div className="w-fit mx-auto mb-3">
+            <input
+              type="submit"
+              value={"Subcribe"}
+              className="bg-secondary text-white cursor-pointer p-3 text-sm rounded-md "
+              onSubmit={handleSubscribe}
+            />
+          </div>
+        </form>
         <p className="text-center opacity-70">
-          We’ll never share your details with third parties. <br />View our Privacy
-          Policy for more info.
+          We’ll never share your details with third parties. <br />
+          View our Privacy Policy for more info.
         </p>
       </section>
       <section>
@@ -71,6 +108,12 @@ const InquirySection = () => {
           </div>
         </section>
       </section>
+      {showModal.show && (
+        <InfoModal
+          closeModal={() => setShowModal((prev) => ({ ...prev, show: false }))}
+          info={showModal.info}
+        />
+      )}
     </section>
   );
 };
