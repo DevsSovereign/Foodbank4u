@@ -28,7 +28,8 @@ const InquirySection = () => {
     } catch (error) {
       console.error(error);
       setEmail("");
-      setShowModal({ info: "Something went wrong", show: true });
+      const errMsg = error.response.data.message || "Something went wrong"
+      setShowModal({ info: errMsg, show: true });
     } finally {
       setIsLoading(false)
     }
@@ -36,7 +37,7 @@ const InquirySection = () => {
 
   return (
     <section className="md:px-20 px-3 py-10 font-ppins">
-      <h3 className="md:text-5xl text-3xl text-center font-bold mb-5">
+      <h3 className="text-3xl text-center font-bold mb-5">
         Subscribe to Our Newsletter?
       </h3>
       <p className="text-center opacity-70 md:w-1/2 mx-auto">
@@ -44,7 +45,7 @@ const InquirySection = () => {
         tips. Subscribe now and never miss an update!
       </p>
 
-      <section className="md:w-1/2 mx-auto my-20">
+      <section className="md:w-1/2 mx-auto mb-20">
         <form onSubmit={handleSubscribe}>
           <input
             type="email"
