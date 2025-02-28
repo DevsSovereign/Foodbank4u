@@ -5,6 +5,7 @@ import InfoModal from "../../components/Modal/InfoModal";
 
 const InquirySection = () => {
   const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false)
   const [showModal, setShowModal] = useState({
     show: false,
     info: "",
@@ -15,6 +16,7 @@ const InquirySection = () => {
     const payload = {
       email: email,
     };
+    setIsLoading((prev) => !prev)
     try {
       const res = await axios.post(
         `${import.meta.env.VITE_API_URL}/subscribers`,
@@ -27,6 +29,8 @@ const InquirySection = () => {
       console.error(error);
       setEmail("");
       setShowModal({ info: "Something went wrong", show: true });
+    } finally {
+      setIsLoading(false)
     }
   };
 
@@ -55,8 +59,8 @@ const InquirySection = () => {
           <div className="w-fit mx-auto mb-3">
             <input
               type="submit"
-              value={"Subcribe"}
-              className="bg-secondary text-white cursor-pointer p-3 text-sm rounded-md "
+              value={isLoading ? "..." : "Subcribe"}
+              className="bg-secondary text-white cursor-pointer w-40 p-3 text-sm rounded-md "
               onSubmit={handleSubscribe}
             />
           </div>
