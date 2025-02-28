@@ -3,9 +3,17 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import { useLocation } from "react-router-dom";
 import BackToTop from "../../components/BackToTop";
+import axios from "axios";
+import InfoModal from "../../components/Modal/InfoModal";
 
 const Index = () => {
   const [pageNo, setPageNo] = useState(1);
+  const [errors, setErrors] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+  const [showModal, setShowModal] = useState({
+    show: false,
+    info: "",
+  });
   const [inputValue, setInputValue] = useState({
     name: "",
     contactPerson: "",
@@ -30,6 +38,95 @@ const Index = () => {
     }
   }, [location]);
 
+  const page1Validation = () => {
+    let hasErrors = false;
+    const newError = {};
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const regexPhone = /^\+?[1-9]\d{1,14}$/;
+
+    if (inputValue.name.length < 2) {
+      hasErrors = true;
+      newError.name = "Please enter valid company name";
+    }
+
+    if (inputValue.contactPerson < 3) {
+      hasErrors = true;
+      newError.contactPerson = "Please enter valid contact person name";
+    }
+    if (!regexEmail.test(inputValue.email)) {
+      hasErrors = true;
+      newError.email = "Please enter valid email address";
+    }
+    if (!regexPhone.test(inputValue.phoneNo)) {
+      hasErrors = true;
+      newError.phoneNo =
+        "Phone number should contain country code, only numbers, and max 15 digits";
+    }
+    setErrors(newError);
+    return hasErrors;
+  };
+
+  const page2Validation = () => {
+    let hasErrors = false;
+    const newError = {};
+
+    if (inputValue.foodProduct.length < 2) {
+      hasErrors = true;
+      newError.foodProduct = "Please describe your products or services";
+    }
+
+    if (inputValue.whyFoodbank.length < 2) {
+      hasErrors = true;
+      newError.whyFoodbank = "Please fill this data";
+    }
+
+    if (inputValue.additionalInfo.length < 2) {
+      hasErrors = true;
+      newError.additionalInfo = "Please fill this data";
+    }
+
+    setErrors(newError);
+    return hasErrors;
+  };
+
+  const handleNextPage = () => {
+    if (pageNo === 1 && page1Validation()) {
+      return;
+    }
+    if (pageNo === 2 && page2Validation()) {
+      return;
+    }
+    setPageNo((prev) => prev + 1);
+  };
+
+  const handleSubmit = async () => {
+    const payload = {
+      name: inputValue.name,
+      contactPerson: inputValue.contactPerson,
+      email: inputValue.email,
+      phoneNo: inputValue.phoneNo,
+      foodProduct: inputValue.foodProduct,
+      whyPartnerWithUs: inputValue.whyFoodbank,
+      additionalInformation: inputValue.additionalInfo,
+    };
+    setIsLoading((prev) => !prev);
+    try {
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_URL}/partnersWithUs`,
+        payload
+      );
+      const resMsg =
+        res.data.message || "Partner request submitted successfully";
+      setPageNo(0);
+      setShowModal((prev) => ({ ...prev, info: resMsg }));
+    } catch (error) {
+      console.error(error);
+      setShowModal({ info: "Something went wrong", show: true });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <section className="max-w-[1450px] mx-auto relative overflow-hidden">
       <Header
@@ -37,7 +134,10 @@ const Index = () => {
         textColor={"text-white"}
         isOtherPage={true}
       />
-      <section id="hero" className="bg-black relative flex items-center justify-center h-screen">
+      <section
+        id="hero"
+        className="bg-black relative flex items-center justify-center h-screen"
+      >
         <section className="bg-[url('/assets/wave.png')] bg-fixed bg-cover w-full h-full">
           <section className="text-white flex h-full flex-col justify-center items-center text-center">
             <h1 className="lg:text-7xl md:text-5xl text-4xl mb-5 font-bold">
@@ -104,6 +204,9 @@ const Index = () => {
                 }
                 placeholder="Enter your company name"
               />
+              {errors.name && (
+                <p className="text-red-400 text-xs">{errors.name}</p>
+              )}
 
               <label htmlFor="contactPerson">Contact Person</label>
               <input
@@ -120,6 +223,9 @@ const Index = () => {
                 }
                 placeholder="Enter company representative"
               />
+              {errors.contactPerson && (
+                <p className="text-red-400 text-xs">{errors.contactPerson}</p>
+              )}
 
               <label htmlFor="email">Email</label>
               <input
@@ -133,6 +239,9 @@ const Index = () => {
                 }
                 placeholder="Enter company email address"
               />
+              {errors.email && (
+                <p className="text-red-400 text-xs">{errors.email}</p>
+              )}
 
               <label htmlFor="phoneNo">Phone No</label>
               <input
@@ -147,8 +256,11 @@ const Index = () => {
                     phoneNo: e.target.value,
                   }))
                 }
-                placeholder="Enter company phone number"
+                placeholder="Enter company phone number (e.g +234)"
               />
+              {errors.phoneNo && (
+                <p className="text-red-400 text-xs">{errors.phoneNo}</p>
+              )}
             </section>
           )}
 
@@ -169,6 +281,9 @@ const Index = () => {
                 }
                 placeholder="Describe"
               />
+              {errors.foodProduct && (
+                <p className="text-red-400 text-xs">{errors.foodProduct}</p>
+              )}
 
               <label htmlFor="whyFoodbank">Why Partner with Food Bank?</label>
               <input
@@ -185,6 +300,9 @@ const Index = () => {
                 }
                 placeholder="Tell us"
               />
+              {errors.whyFoodbank && (
+                <p className="text-red-400 text-xs">{errors.whyFoodbank}</p>
+              )}
 
               <label htmlFor="additional">Additional Information</label>
               <textarea
@@ -201,6 +319,9 @@ const Index = () => {
                 }
                 placeholder="Additional note"
               ></textarea>
+              {errors.additionalInfo && (
+                <p className="text-red-400 text-xs">{errors.additionalInfo}</p>
+              )}
             </section>
           )}
 
@@ -212,8 +333,13 @@ const Index = () => {
                   name="terms"
                   id="terms"
                   className="mt-2"
-                  value={inputValue.terms}
-                  onChange={() => setInputValue((prev) => !prev)}
+                  checked={inputValue.terms}
+                  onChange={(e) =>
+                    setInputValue((prev) => ({
+                      ...prev,
+                      terms: e.target.checked,
+                    }))
+                  }
                 />
                 <label htmlFor="terms">
                   I have read, understood and agree to Food Bank&apos;s Terms
@@ -228,8 +354,13 @@ const Index = () => {
                   name="agree"
                   id="agree"
                   className="mt-2"
-                  value={inputValue.agree}
-                  onChange={() => setInputValue((prev) => !prev)}
+                  checked={inputValue.agree}
+                  onChange={(e) =>
+                    setInputValue((prev) => ({
+                      ...prev,
+                      agree: e.target.checked,
+                    }))
+                  }
                 />
                 <label htmlFor="agree">
                   By submitting this form, I agree to Food Bank&apos;s terms
@@ -243,7 +374,7 @@ const Index = () => {
           <button
             type="button"
             className="bg-secondary text-white px-10 py-2 w-fit mx-auto my-4"
-            onClick={() => setPageNo((prev) => prev + 1)}
+            onClick={handleNextPage}
           >
             Next
           </button>
@@ -251,10 +382,11 @@ const Index = () => {
         {pageNo === 3 && (
           <button
             type="button"
-            className="bg-secondary text-white px-10 py-2 w-fit mx-auto my-4"
-            onClick={() => setPageNo(0)}
+            className="bg-secondary text-white px-10 py-2 w-40 mx-auto my-4"
+            onClick={handleSubmit}
+            disabled={!inputValue.terms || !inputValue.agree}
           >
-            Submit
+            {isLoading ? "..." : "Submit"}
           </button>
         )}
         {pageNo === 0 && (
@@ -263,9 +395,17 @@ const Index = () => {
               <img src="/assets/sentMsg.png" alt="messsage sent" />
             </figure>
             <p className="text-center my-10 text-lg font-semibold">
-              Sent Successfully
+              {showModal.info}
             </p>
           </section>
+        )}
+        {showModal.show && (
+          <InfoModal
+            closeModal={() =>
+              setShowModal((prev) => ({ ...prev, show: false }))
+            }
+            info={showModal.info}
+          />
         )}
       </section>
 
