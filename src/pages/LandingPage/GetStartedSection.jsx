@@ -17,7 +17,14 @@ const GetStartedSection = () => {
       <section className="md:py-20 py-5 md:my-20 my-5 relative flex justify-between w-11/12 mx-auto gap-3">
         <article>
           <ul className="flex flex-col md:justify-between md:gap-20 gap-7">
-            <li className="flex gap-3 items-center md:w-[15rem] my-2">
+            <li
+              className="flex gap-3 items-center md:w-[15rem] my-2"
+              data-aos="slide-right"
+              data-aos-offset="100"
+              data-aos-delay="10"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+            >
               <div className="text-sm hidden bg-[#008B5080] w-14 h-6 rounded-[50%] md:block text-center">
                 1
               </div>
@@ -29,7 +36,14 @@ const GetStartedSection = () => {
                 </p>
               </div>
             </li>
-            <li className="flex gap-3 items-center md:w-[15rem] my-2">
+            <li
+              className="flex gap-3 items-center md:w-[15rem] my-2"
+              data-aos="slide-right"
+              data-aos-offset="100"
+              data-aos-delay="10"
+              data-aos-duration="1200"
+              data-aos-easing="ease-in-out"
+            >
               <div className="text-sm hidden bg-[#008B5080] w-14 h-6 rounded-[50%] md:block text-center">
                 2
               </div>
@@ -41,7 +55,14 @@ const GetStartedSection = () => {
                 </p>
               </div>
             </li>
-            <li className="flex gap-3 items-center md:w-[15rem] my-2">
+            <li
+              className="flex gap-3 items-center md:w-[15rem] my-2"
+              data-aos="slide-right"
+              data-aos-offset="100"
+              data-aos-delay="10"
+              data-aos-duration="1400"
+              data-aos-easing="ease-in-out"
+            >
               <div className="text-sm hidden bg-[#008B5080] w-14 h-6 rounded-[50%] md:block text-center">
                 3
               </div>
@@ -62,7 +83,14 @@ const GetStartedSection = () => {
         </figure>
         <article>
           <ul className="flex flex-col md:justify-between md:gap-20 gap-7">
-            <li className="flex gap-3 items-center md:w-[15rem] my-2">
+            <li
+              className="flex gap-3 items-center md:w-[15rem] my-2"
+              data-aos="slide-left"
+              data-aos-offset="100"
+              data-aos-delay="10"
+              data-aos-duration="1100"
+              data-aos-easing="ease-in-out"
+            >
               <div className="text-sm hidden bg-[#008B5080] w-14 h-6 rounded-[50%] md:block text-center">
                 1
               </div>
@@ -74,7 +102,14 @@ const GetStartedSection = () => {
                 </p>
               </div>
             </li>
-            <li className="flex gap-3 items-center md:w-[15rem] my-2">
+            <li
+              className="flex gap-3 items-center md:w-[15rem] my-2"
+              data-aos="slide-left"
+              data-aos-offset="100"
+              data-aos-delay="10"
+              data-aos-duration="1300"
+              data-aos-easing="ease-in-out"
+            >
               <div className="text-sm hidden bg-[#008B5080] w-14 h-6 rounded-[50%] md:block text-center">
                 2
               </div>
@@ -86,7 +121,14 @@ const GetStartedSection = () => {
                 </p>
               </div>
             </li>
-            <li className="flex gap-3 items-center md:w-[15rem] my-2">
+            <li
+              className="flex gap-3 items-center md:w-[15rem] my-2"
+              data-aos="slide-left"
+              data-aos-offset="100"
+              data-aos-delay="10"
+              data-aos-duration="1500"
+              data-aos-easing="ease-in-out"
+            >
               <div className="text-sm hidden bg-[#008B5080] w-14 h-6 rounded-[50%] md:block text-center">
                 3
               </div>
@@ -101,7 +143,14 @@ const GetStartedSection = () => {
           </ul>
         </article>
       </section>
-      <section className="flex flex-col justify-center gap-4 mt-2 items-center sm:flex-row md:gap-8">
+      <section
+        className="flex flex-col justify-center gap-4 mt-2 items-center sm:flex-row md:gap-8"
+        data-aos="fade-up"
+        data-aos-offset="100"
+        data-aos-delay="10"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+      >
         <div className="bg-black p-2 border rounded-sm w-[12rem]">
           <a
             href="https://play.google.com/store/apps/details?id=com.foodbank4u.app"

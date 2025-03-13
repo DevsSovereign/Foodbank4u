@@ -5,7 +5,7 @@ import InfoModal from "../../components/Modal/InfoModal";
 
 const InquirySection = () => {
   const [email, setEmail] = useState("");
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
   const [showModal, setShowModal] = useState({
     show: false,
     info: "",
@@ -16,7 +16,7 @@ const InquirySection = () => {
     const payload = {
       email: email,
     };
-    setIsLoading((prev) => !prev)
+    setIsLoading((prev) => !prev);
     try {
       const res = await axios.post(
         `${import.meta.env.VITE_API_URL}/subscribers`,
@@ -28,15 +28,22 @@ const InquirySection = () => {
     } catch (error) {
       console.error(error);
       setEmail("");
-      const errMsg = error.response.data.message || "Something went wrong"
+      const errMsg = error.response.data.message || "Something went wrong";
       setShowModal({ info: errMsg, show: true });
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
   };
 
   return (
-    <section className="md:px-20 px-3 py-10 font-ppins">
+    <section
+      className="md:px-20 px-3 py-10 font-ppins"
+      data-aos="fade"
+      data-aos-offset="100"
+      data-aos-delay="10"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+    >
       <h3 className="text-3xl text-center font-bold mb-5">
         Subscribe to Our Newsletter?
       </h3>
@@ -53,7 +60,7 @@ const InquirySection = () => {
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="border p-3 w-full my-4 text-xs"
+            className="border p-3 w-full my-10 text-xs"
             placeholder="Enter email address"
             required
           />

@@ -46,7 +46,14 @@ const ReviewSection = () => {
   }, []);
 
   return (
-    <section className="py-20">
+    <section
+      className="py-20"
+      data-aos="zoom-in"
+      data-aos-offset="100"
+      data-aos-delay="10"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+    >
       <h3 className="text-center text-secondary font-ppins">TESTIMONIALS</h3>
       <p className="text-center font-bold sm:text-3xl text-xl lg:w-1/2 sm:w-2/3 mx-auto my-2 px-5 font-ppins">
         HONEST REVIEWS AND SUCCESS STORIES
