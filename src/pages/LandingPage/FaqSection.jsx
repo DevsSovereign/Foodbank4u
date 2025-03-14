@@ -2,9 +2,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { FaAngleDown, FaAngleRight } from "react-icons/fa";
+import { FaArrowDownLong, FaArrowUpLong } from "react-icons/fa6";
 import { useLocation } from "react-router-dom";
 
 const FaqSection = () => {
+  const [showAll, setShowAll] = useState(false);
   const [faqData, setFaqData] = useState([]);
   const [showAnswer, setShowAnswer] = useState([]);
 
@@ -19,7 +21,6 @@ const FaqSection = () => {
         console.error(error);
       }
     };
-    
     getFaqs();
   }, []);
 
@@ -66,7 +67,7 @@ const FaqSection = () => {
         <section>
           <ul className="bg-white py-10 px-5 lg:pr-8 rounded-lg border-t-8 border-secondary md:w-[28rem] sm:w-2/3 sm:mx-auto mx-4">
             {faqData.length > 0 ? (
-              faqData.map((faq, index) => (
+              (showAll ? faqData : faqData.slice(0, 5)).map((faq, index) => (
                 <li key={index} className="relative p-3 lg:w-[25rem] border-b">
                   <h4 className="font-bold mb-3">{faq.title}</h4>
                   <div
@@ -95,6 +96,24 @@ const FaqSection = () => {
               ))
             ) : (
               <p className="text-center">Loading</p>
+            )}
+            {faqData.length > 5 && (
+              <button
+                onClick={() => setShowAll((prev) => !prev)}
+                className="mt-3 block mx-auto text-secondary border border-secondary p-2 text-sm"
+              >
+                {!showAll ? (
+                  <span className="flex gap-2 items-center">
+                    <p>More</p>
+                    <FaArrowDownLong className="w-3 h-3" />
+                  </span>
+                ) : (
+                  <span className="flex gap-2 items-center">
+                    <p>Less</p>
+                    <FaArrowUpLong className="w-3 h-3" />
+                  </span>
+                )}
+              </button>
             )}
           </ul>
         </section>
