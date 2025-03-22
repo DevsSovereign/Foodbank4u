@@ -79,10 +79,7 @@ const InquirySection = () => {
         </p>
       </section>
       <section>
-        <figure className="w-fit mx-auto">
-          <img src="/assets/videoImg.png" alt="" />
-        </figure>
-        <section className="flex flex-col md:flex-row justify-between my-10">
+        <section className="flex border-t pt-10 flex-col md:flex-row justify-between my-10">
           <p className="md:text-5xl text-2xl font-bold lg:w-1/2 text-center md:text-left mb-3 md:mb-0">
             Ready to launch your next project?
           </p>
