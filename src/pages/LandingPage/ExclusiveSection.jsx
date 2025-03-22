@@ -1,14 +1,19 @@
 /* eslint-disable react/prop-types */
 import ListCard from "../../components/ListCard";
 
-const ExclusiveSection = ({data, mainText, subText1, subText2, details}) => {
+const ExclusiveSection = ({ data, mainText, subText1, subText2, details }) => {
   return (
-    <section className="py-10">
+    <section
+      className="py-10"
+      data-aos="slide-up"
+      data-aos-offset="100"
+      data-aos-delay="10"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+    >
       <section className="sm:p-10 p-5 flex flex-col md:gap-0 gap-5 md:flex-row justify-between md:items-center">
         <h3 className="font-ppins text-4xl font-medium">
-          <span className="font-mplus text-sm font-normal">
-            {mainText}
-          </span>
+          <span className="font-mplus text-sm font-normal">{mainText}</span>
           <br />
           <span className="text-secondary">{subText1}</span>
           <br className="sm:block hidden" /> {subText2}

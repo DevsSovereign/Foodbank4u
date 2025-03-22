@@ -11,16 +11,6 @@ const Header = ({ customStyle, textColor, isOtherPage }) => {
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    } else {
-      window.location.href = `/#${id}`;
-    }
-  };
-
   useEffect(() => {
     const handleScroll = () => {
       const heroSection = document.getElementById("hero");
@@ -36,7 +26,7 @@ const Header = ({ customStyle, textColor, isOtherPage }) => {
 
   return (
     <nav
-      className={`flex items-center justify-between py-4 md:px-10 px-4 z-30 w-full 
+      className={`flex items-center justify-between py-4 md:px-6 px-4 z-30 w-full 
     ${
       isFixed
         ? "fixed bg-white shadow-lg transition-all duration-1000 ease-in-out z-50"
@@ -61,18 +51,18 @@ const Header = ({ customStyle, textColor, isOtherPage }) => {
         </p>
       </span>
       <button type="button" onClick={() => setShowMenu(true)}>
-        <RxHamburgerMenu className="w-7 h-7 sm:hidden" />
+        <RxHamburgerMenu className="w-7 h-7 min-[810px]:hidden z-30 relative" />
       </button>
       <ul
-        className={`gap-4 sm:flex ${
+        className={`gap-4 min-[810px]:flex ${
           showMenu
-            ? "bg-secondary flex-col p-5 pb-10 flex text-white absolute z-30 top-0 right-0 sm:w-1/2 w-full md:hidden"
+            ? "bg-secondary flex-col p-5 pb-10 flex text-white absolute z-30 top-0 right-0 sm:w-1/2 w-full min-[810px]:hidden"
             : "hidden items-center "
         }`}
       >
         {showMenu && (
           <button type="button" onClick={() => setShowMenu(false)}>
-            <RiCloseLargeFill className="w-7 h-7 sm:hidden" />
+            <RiCloseLargeFill className="w-7 h-7 min-[810px]:hidden" />
           </button>
         )}
         <li className="font-mplus">
@@ -80,20 +70,24 @@ const Header = ({ customStyle, textColor, isOtherPage }) => {
         </li>
         <li
           className="font-mplus cursor-pointer"
-          onClick={() => scrollToSection("faq")}
         >
-          FAQs
+          <Link to={"/dietitian"}>Dietitian</Link>
+        </li>
+        <li
+          className="font-mplus cursor-pointer"
+        >
+          <Link to={"/faq"}>FAQs</Link>
         </li>
         <li className="font-mplus">
           <Link to={"/get-in-touch"}>Partner With Us</Link>
         </li>
-        <li className="md:ml-8 mx-auto">
+        <li className="md:ml-3 mx-auto">
           <button
             type="button"
             className={`${
               isFixed && isOtherPage ? "text-secondary" : textColor
             } border-2 font-mplus py-2 rounded-full md:px-10 ${
-              showMenu ? "px-10" : "border-secondary text-secondary px-4"
+              showMenu ? "px-10 text-white" : "border-secondary text-secondary px-4"
             }`}
             onClick={() => setShowModal((prev) => !prev)}
           >

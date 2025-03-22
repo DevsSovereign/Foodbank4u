@@ -28,7 +28,14 @@ const TransformSection = () => {
     },
   ];
   return (
-    <section className="py-20 relative bg-white z-20">
+    <section
+      className="py-20 relative bg-white z-20"
+      data-aos="zoom-in"
+      data-aos-offset="100"
+      data-aos-delay="10"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+    >
       <h3 className="text-center text-secondary font-ppins">
         DEDICATED FEATURES
       </h3>

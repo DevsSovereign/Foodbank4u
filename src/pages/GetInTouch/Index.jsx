@@ -139,7 +139,14 @@ const Index = () => {
         className="bg-black relative flex items-center justify-center h-screen"
       >
         <section className="bg-[url('/assets/wave.png')] bg-fixed bg-cover w-full h-full">
-          <section className="text-white flex h-full flex-col justify-center items-center text-center">
+          <section
+            className="text-white flex h-full flex-col justify-center items-center text-center"
+            data-aos="zoom-in-up"
+            data-aos-offset="100"
+            data-aos-delay="10"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+          >
             <h1 className="lg:text-7xl md:text-5xl text-4xl mb-5 font-bold">
               Get In Touch
             </h1>
@@ -152,7 +159,15 @@ const Index = () => {
         </section>
       </section>
 
-      <section id="partnershipForm" className="flex flex-col my-10">
+      <section
+        id="partnershipForm"
+        className="flex flex-col my-10"
+        data-aos="fade-up"
+        data-aos-offset="100"
+        data-aos-delay="10"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+      >
         {pageNo !== 0 && (
           <button
             type="button"
@@ -340,6 +355,7 @@ const Index = () => {
                       terms: e.target.checked,
                     }))
                   }
+                  value={inputValue.terms}
                 />
                 <label htmlFor="terms">
                   I have read, understood and agree to Food Bank&apos;s Terms
@@ -361,6 +377,7 @@ const Index = () => {
                       agree: e.target.checked,
                     }))
                   }
+                  value={inputValue.agree}
                 />
                 <label htmlFor="agree">
                   By submitting this form, I agree to Food Bank&apos;s terms

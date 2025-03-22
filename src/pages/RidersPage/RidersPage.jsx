@@ -38,7 +38,14 @@ const RidersPage = () => {
       />
       <PartnershipSection />
       <FaqSection data={faqData} />
-      <section className="flex flex-col md:flex-row justify-between items-center py-10 px-10">
+      <section
+        className="flex flex-col md:flex-row justify-between items-center py-10 px-10"
+        data-aos="fade"
+        data-aos-offset="100"
+        data-aos-delay="10"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+      >
         <h3 className="md:text-4xl text-2xl md:w-1/2 text-center mb-5 md:text-left md:mb-0 md:leading-[3.5rem] font-bold">
           Partner With Foodbank Today and feed the Nation
         </h3>

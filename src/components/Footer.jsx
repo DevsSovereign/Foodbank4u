@@ -39,6 +39,30 @@ const Footer = () => {
               +2349159855709
             </li>
 
+            <li className="flex items-center gap-3">
+              <Link
+                to="https://www.instagram.com/foodbankltd?igsh=MXMydXBtZmU1dDgweQ=="
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaInstagram className="w-5 h-5 text-[#008B50]" />
+              </Link>
+              <Link
+                to="https://www.facebook.com/share/hjULsRZ118iQrY1D/?mibextid=LQQJ4d"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaFacebook className="w-5 h-5 text-[#008B50]" />
+              </Link>
+              <Link
+                to="https://www.linkedin.com/company/foodbankapp/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaLinkedin className="w-5 h-5 text-[#008B50]" />
+              </Link>
+            </li>
+
             <li className="flex items-center gap-2">
               <IoIosMail className="text-secondary w-5 h-5" />
               cs@foodbank4u.com
@@ -58,29 +82,6 @@ const Footer = () => {
       </section>
       <section className="bg-white p-3 text-center text-sm flex flex-col md:flex-row md:items-center md:justify-between">
         <p>© 2024 Copyright, All Right Reserved, Foodbank</p>
-        <div className="flex items-center gap-3 justify-center my-3">
-          <Link
-            to="https://www.instagram.com/foodbankltd?igsh=MXMydXBtZmU1dDgweQ=="
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaInstagram className="w-5 h-5 text-[#008B50]" />
-          </Link>
-          <Link
-            to="https://www.facebook.com/share/hjULsRZ118iQrY1D/?mibextid=LQQJ4d"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaFacebook className="w-5 h-5 text-[#008B50]" />
-          </Link>
-          <Link
-            to="https://www.linkedin.com/company/foodbankapp/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaLinkedin className="w-5 h-5 text-[#008B50]" />
-          </Link>
-        </div>
       </section>
     </footer>
   );
