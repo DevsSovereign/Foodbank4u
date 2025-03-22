@@ -51,7 +51,7 @@ const Header = ({ customStyle, textColor, isOtherPage }) => {
         </p>
       </span>
       <button type="button" onClick={() => setShowMenu(true)}>
-        <RxHamburgerMenu className="w-7 h-7 min-[810px]:hidden" />
+        <RxHamburgerMenu className="w-7 h-7 min-[810px]:hidden z-30 relative" />
       </button>
       <ul
         className={`gap-4 min-[810px]:flex ${
