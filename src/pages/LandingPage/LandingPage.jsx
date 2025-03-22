@@ -5,8 +5,6 @@ import HeroSection from "./HeroSection";
 import ExclusiveSection from "./ExclusiveSection";
 import GetStartedSection from "./GetStartedSection";
 import TransformSection from "./TransformSection";
-import FaqSection from "./FaqSection";
-import faqData from "./faqData.json";
 import ReviewSection from "./ReviewSection";
 import InquirySection from "./InquirySection";
 import benefitsData from "./benefits.json";
@@ -35,8 +33,8 @@ const LandingPage = () => {
       />
       <GetStartedSection />
       <TransformSection />
-      <FaqSection data={faqData} />
       <ReviewSection />
+      <hr />
       <InquirySection />
       <BackToTop />
       <Footer />
