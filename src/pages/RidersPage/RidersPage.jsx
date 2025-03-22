@@ -1,10 +1,8 @@
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import ExclusiveSection from "../LandingPage/ExclusiveSection";
-import FaqSection from "../LandingPage/FaqSection";
 import HeroSection from "./HeroSection";
 import PartnershipSection from "./PartnershipSection";
-import faqData from "./faqData.json";
 import benefitsData from "./benefits.json";
 import BackToTop from "../../components/BackToTop";
 
@@ -37,9 +35,8 @@ const RidersPage = () => {
         }
       />
       <PartnershipSection />
-      <FaqSection data={faqData} />
       <section
-        className="flex flex-col md:flex-row justify-between items-center py-10 px-10"
+        className="flex border-t flex-col md:flex-row justify-between items-center py-10 px-10"
         data-aos="fade"
         data-aos-offset="100"
         data-aos-delay="10"
